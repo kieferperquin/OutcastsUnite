@@ -309,7 +309,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &7588474621783988728
 GameObject:
@@ -320,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6946054567794932596}
-  - component: {fileID: 5789412030387473547}
+  - component: {fileID: 3291831379089278526}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -343,7 +343,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3140616344964245454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5789412030387473547
+--- !u!212 &3291831379089278526
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -389,7 +389,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 3.2, y: 3.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
