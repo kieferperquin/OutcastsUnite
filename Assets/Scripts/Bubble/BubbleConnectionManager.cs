@@ -33,15 +33,29 @@ public class BubbleConnectionManager : MonoBehaviour
         {
             selectedBubbles.Add(newWord);
 
-            newWord.GetComponent<WordBubble>().canMove = false;
+            WordBubble word = newWord.GetComponent<WordBubble>();
 
-            SendDataForConnection();
+            Debug.Log(word.GetSegment().GetType());
+
+            if (word.GetSegment().GetType() == typeof(PhraseSegment))
+            {
+                word.canMove = false;
+
+                SendDataForConnection();
+            }
+            else
+            {
+                BubbleSpawner.Instance.SpawnBubble(word.GetSegment());
+
+                Destroy(word.gameObject);
+
+                Deselect();
+            }
         }
     }
 
     public void CheckSentence()
     {
-        /// send the list selectedBubbles to check the sentence
         List<string> currentPhrase = new List<string>();
         List<string> controlPhrase = PhraseManager.Instance.GetPhrase();
 
@@ -87,7 +101,6 @@ public class BubbleConnectionManager : MonoBehaviour
 
     void MakeListEmpty()
     {
-        
         selectedBubbles = new List<GameObject>();
     }
 

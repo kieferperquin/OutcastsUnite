@@ -22,14 +22,12 @@ public class Selector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("enter");
-
-        if (other.CompareTag("Bubble"))
+        if (other.CompareTag("Bubble") || other.CompareTag("Obstacle"))
         {
             BubbleConnectionManager.instance.NewWordCheck(other.gameObject);
         }
 
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             BubbleConnectionManager.instance.CheckSentence();
         }

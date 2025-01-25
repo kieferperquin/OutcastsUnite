@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 608788811}
   - component: {fileID: 608788813}
   - component: {fileID: 608788814}
+  - component: {fileID: 608788815}
   m_Layer: 0
   m_Name: -_- SYSTEMS -_-
   m_TagString: Untagged
@@ -336,8 +337,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4764fdfb5eed647a41850ca0e50a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelIndex: 0
   PhraseLib: {fileID: 11400000, guid: 85fa6fe9c62cbe64e9ca856cbd824645, type: 2}
   PhraseID: 0
+  currentPhrase: []
+--- !u!114 &608788815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608788809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b86b74c36f25e4dbc428c11233bcfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PhraseLibraries:
+  - {fileID: 11400000, guid: 85fa6fe9c62cbe64e9ca856cbd824645, type: 2}
 --- !u!1 &762290059
 GameObject:
   m_ObjectHideFlags: 0
