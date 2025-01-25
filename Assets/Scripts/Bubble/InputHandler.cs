@@ -20,11 +20,9 @@ public class InputHandler : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            BubbleSpawner.Instance.SpawnBubble(alphabed[lettercount]);
-            lettercount++;
-            if(lettercount == alphabed.Count)
+            foreach (Segment sgmt in PhraseManager.Instance.GetSegments())
             {
-                lettercount = 0;
+                BubbleSpawner.Instance.SpawnBubble(sgmt);
             }
         }
     }

@@ -5,18 +5,9 @@ using UnityEngine;
 public class BubbleConnectionManager : MonoBehaviour
 {
     public static BubbleConnectionManager instance;
-
-    /// <summary> steps to take
-    /// 
-    /// 5. if i hover over the "player" then then i will send the list of strings to somethings james will make to check if the centence is correct
-    /// 
-    /// </summary>
-
     [SerializeField] private GameObject selectorPrefab;
-
-    List<GameObject> selectedBubbles = new List<GameObject>();
-
-    GameObject selector;
+    private List<GameObject> selectedBubbles = new List<GameObject>();
+    private GameObject selector;
 
     private void Awake()
     {
@@ -49,6 +40,7 @@ public class BubbleConnectionManager : MonoBehaviour
 
     public void CheckCentence()
     {
+        
         /// send the list selectedBubbles to check the centence
 
         Debug.Log("check");

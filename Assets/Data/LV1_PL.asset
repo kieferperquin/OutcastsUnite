@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4961180c9946f3e4e94ab96bb4788799, type: 3}
-  m_Name: PhraseLibrary
+  m_Name: LV1_PL
   m_EditorClassIdentifier: 
   Phrases:
   - Segments:

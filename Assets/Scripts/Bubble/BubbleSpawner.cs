@@ -6,10 +6,9 @@ public class BubbleSpawner : MonoBehaviour
 {
     public static BubbleSpawner Instance;
 
-    [SerializeField] private GameObject bubblesLocation;
-    [SerializeField] private GameObject bubblePrefab;
-
-    List<GameObject> bubbles = new List<GameObject>();
+    [SerializeField] private GameObject bubbleContainer;
+    [SerializeField] private List<GameObject> bubblePrefabs = new List<GameObject>();
+    [SerializeField] private List<GameObject> obstaclePrefabs = new List<GameObject>();
 
     private void Awake()
     {
@@ -23,14 +22,23 @@ public class BubbleSpawner : MonoBehaviour
         }
     }
 
-    public void SpawnBubble(string wordToGive)
+    public void SpawnBubble(Segment segment)
     {
-        GameObject bubble = Instantiate(bubblePrefab, bubblesLocation.transform);
+        int prefabID;
+        GameObject prefab;
+        
+        // Determine word length / bubble size
+        if (segment.text.Length < 13) { prefabID = 0; }
+        else if (13 >= segment.text.Length && segment.text.Length < 24) { prefabID = 1; }
+        else { prefabID = 2; }
 
-        bubble.GetComponent<Bubble>().GiveWord(wordToGive);
+        // Determine bubble type.
+        if (segment.GetType() == typeof(PhraseSegment)) { prefab = bubblePrefabs[prefabID]; }
+        else { prefab = obstaclePrefabs[prefabID]; }
 
         //give the bubble a random position
+        GameObject bubble = Instantiate(prefab, new Vector3(0,0,0), Quaternion.identity, bubbleContainer.transform);
 
-        bubbles.Add(bubble);
+        bubble.GetComponent<Bubble>().GiveWord(segment.text);
     }
 }
