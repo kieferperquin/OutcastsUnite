@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ConnectionVisualizer : MonoBehaviour
 {
-    public static ConnectionVisualizer instance;
+    public static ConnectionVisualizer Instance;
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {

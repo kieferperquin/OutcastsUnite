@@ -8,11 +8,11 @@ public class InputHandler : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            BubbleConnectionManager.instance.Select();
+            BubbleConnectionManager.Instance.Select();
         }
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {
-            BubbleConnectionManager.instance.Deselect();
+            BubbleConnectionManager.Instance.Deselect();
         }
     }
 }

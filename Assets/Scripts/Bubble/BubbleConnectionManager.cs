@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class BubbleConnectionManager : MonoBehaviour
 {
-    public static BubbleConnectionManager instance;
+    public static BubbleConnectionManager Instance;
     [SerializeField] private GameObject selectorPrefab;
     private List<GameObject> selectedBubbles = new List<GameObject>();
     private GameObject selector;
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -112,6 +112,6 @@ public class BubbleConnectionManager : MonoBehaviour
         GameObject pointB = selectedBubbles[selectedBubbles.Count - 1];
 
         /// send pointA and pointB to connectionvisualizer script
-        ConnectionVisualizer.instance.Connect(pointA, pointB);
+        ConnectionVisualizer.Instance.Connect(pointA, pointB);
     }
 }

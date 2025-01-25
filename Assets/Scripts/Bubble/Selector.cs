@@ -24,12 +24,12 @@ public class Selector : MonoBehaviour
     {
         if (other.CompareTag("Bubble") || other.CompareTag("Obstacle"))
         {
-            BubbleConnectionManager.instance.NewWordCheck(other.gameObject);
+            BubbleConnectionManager.Instance.NewWordCheck(other.gameObject);
         }
 
         if (other.CompareTag("Player"))
         {
-            BubbleConnectionManager.instance.CheckSentence();
+            BubbleConnectionManager.Instance.CheckSentence();
         }
     }
 }
