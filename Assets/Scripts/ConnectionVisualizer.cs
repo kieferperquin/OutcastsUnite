@@ -6,6 +6,11 @@ public class ConnectionVisualizer : MonoBehaviour
 {
     public static ConnectionVisualizer Instance;
 
+    private LineRenderer lr;
+
+    List<Transform> points = new List<Transform>();
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -16,20 +21,48 @@ public class ConnectionVisualizer : MonoBehaviour
         {
             Destroy(this);
         }
+        lr = GetComponent<LineRenderer>();
     }
 
-    public void Connect(GameObject a, GameObject b)
+    public void SetUpLine(List<Transform> points)
     {
-        Connect(a.transform, b.transform);
+        lr.positionCount = points.Count;
+        this.points = points;
     }
 
-    public void Connect(Transform a, Transform b)
+    private void Update()
     {
-        /// connect A to B and save it
+        for (int i = 0; i < points.Count; i++)
+        {
+            lr.SetPosition(i, points[i].position);
+        }
+    }
+
+    public void Connect(GameObject a)
+    {
+        Connect(a.transform);
+    }
+
+    public void Connect(Transform a)
+    {
+        points.Insert(points.Count - 1, a);
+        SetUpLine(points);
+    }
+
+    public void GiveMouseObj(GameObject mousePosObj)
+    {
+        GiveMouseObj(mousePosObj.transform);
+        SetUpLine(points);
+    }
+
+    public void GiveMouseObj(Transform mousePosObj)
+    {
+        points.Add(mousePosObj);
     }
 
     public void ClearConnections()
     {
-        /// destroy all saved connections
+        points.Clear();
+        SetUpLine(points);
     }
 }
