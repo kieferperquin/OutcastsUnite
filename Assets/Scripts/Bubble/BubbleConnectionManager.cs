@@ -48,15 +48,16 @@ public class BubbleConnectionManager : MonoBehaviour
         foreach (GameObject currentWord in selectedBubbles)
         {
             currentPhrase.Add(currentWord.GetComponent<WordBubble>().GetSegment().text);
-            Debug.Log(currentWord.GetComponent<WordBubble>().GetSegment().text);
         }
         
         if (currentPhrase.SequenceEqual(controlPhrase))
         {
-            Debug.Log("YESSSS");
+            Player.Instance.CorrectSentence();
+            foreach (GameObject go in selectedBubbles)
+            {
+                Destroy(go);
+            }
         }
-
-        /// if the sentence is correct then delete the bubbles the sentence was made with
         
         MakeListEmpty();
     }
@@ -81,11 +82,12 @@ public class BubbleConnectionManager : MonoBehaviour
 
         }
 
-        selectedBubbles = new List<GameObject>();
+        MakeListEmpty();
     }
 
     void MakeListEmpty()
     {
+        
         selectedBubbles = new List<GameObject>();
     }
 

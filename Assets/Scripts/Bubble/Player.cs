@@ -42,7 +42,7 @@ public class Player : Bubble
         ChangeTargetPos(collision);
     }
 
-    public void CorrectCentance()
+    public void CorrectSentence()
     {
         amountProtection -= 1;
 

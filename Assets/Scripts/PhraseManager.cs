@@ -5,6 +5,7 @@ using UnityEngine;
 public class PhraseManager : MonoBehaviour
 {
     public static PhraseManager Instance { get; private set; }
+    public int LevelIndex = 0;
 
     private void Awake()
     {
@@ -16,8 +17,22 @@ public class PhraseManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
 
+    private void Start()
+    {
         SetPhrase();
+        SpawnNewPhrases(LevelHolder.Instance.PhraseLibraries[LevelIndex]);
+    }
+
+    public void SpawnNewPhrases(PhraseLibrary library)
+    {
+        Instance.PhraseLib = library;
+        
+        foreach (Segment sgmt in PhraseManager.Instance.GetSegments())
+        {
+            BubbleSpawner.Instance.SpawnBubble(sgmt);
+        }
     }
 
     public PhraseLibrary PhraseLib;
