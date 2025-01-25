@@ -13,8 +13,17 @@ public class Bubble : MonoBehaviour
 
     private Vector3 targetPos;
 
+    public bool canMove = true;
+
     public void Movement()
     {
+        if(!canMove)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, transform.position, moveSpeed * Time.deltaTime);
+            return;
+        }
+
+
         if (targetPos == null)
         {
             targetPos = GetRandomPos(transform.position);

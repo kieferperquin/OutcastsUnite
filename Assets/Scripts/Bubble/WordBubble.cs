@@ -8,11 +8,9 @@ public class WordBubble : Bubble
     [SerializeField] private GameObject bubbleWord;
     [SerializeField] private Segment segment;
 
-    public bool canMove = true;
-
     private void Update()
     {
-        if (canMove) Movement();
+        Movement();
     }
 
     private void OnCollisionEnter(Collision collision)

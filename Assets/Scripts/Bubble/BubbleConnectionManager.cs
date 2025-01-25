@@ -112,15 +112,6 @@ public class BubbleConnectionManager : MonoBehaviour
         GameObject pointB = selectedBubbles[selectedBubbles.Count - 1];
 
         /// send pointA and pointB to connectionvisualizer script
+        ConnectionVisualizer.instance.Connect(pointA, pointB);
     }
 }
-    /*
-    void connectionvisualizer(Transform a, Transform b)
-    {
-
-    }
-
-    void connectionvisualizer(GameObject a, GameObject b)
-    {
-        connectionvisualizer(a.transform, b.transform);
-    }*/
