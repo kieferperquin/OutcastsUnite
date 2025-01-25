@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class BubbleSpawner : MonoBehaviour
 {
+    public static BubbleSpawner Instance;
+
     [SerializeField] private GameObject bubblesLocation;
     [SerializeField] private GameObject bubblePrefab;
 
     List<GameObject> bubbles = new List<GameObject>();
 
-    void SpawnBubble(string wordToGive)
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    public void SpawnBubble(string wordToGive)
     {
         GameObject bubble = Instantiate(bubblePrefab, bubblesLocation.transform);
 

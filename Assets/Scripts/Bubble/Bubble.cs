@@ -8,7 +8,7 @@ public class Bubble : MonoBehaviour
 {
     [SerializeField] private GameObject bubbleWord;
 
-    bool canMove;
+    public bool canMove = true;
 
     private void Update()
     {

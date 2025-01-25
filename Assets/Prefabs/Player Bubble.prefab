@@ -305,12 +305,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 814087022496700522}
-  - component: {fileID: 7027926106145074428}
+  - component: {fileID: 7517970406426441066}
   - component: {fileID: 3630141788245113879}
   - component: {fileID: 4094784229548263223}
   m_Layer: 0
-  m_Name: Bubble
-  m_TagString: Bubble
+  m_Name: Player Bubble
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -332,7 +332,7 @@ Transform:
   - {fileID: 6444083954459574907}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7027926106145074428
+--- !u!114 &7517970406426441066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,11 +341,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8016356419084035231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b771012051852b44e8a986d7fd3fb852, type: 3}
+  m_Script: {fileID: 11500000, guid: 09837172b612f7546b9977fc3e058ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleWord: {fileID: 3207240213735782915}
-  canMove: 0
 --- !u!135 &3630141788245113879
 SphereCollider:
   m_ObjectHideFlags: 0
