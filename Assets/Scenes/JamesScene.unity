@@ -246,15 +246,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ee1e14c57a5cc41af371ec1c08966b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleContainer: {fileID: 0}
+  bubbleContainer: {fileID: 1642740669}
   bubblePrefabs:
-  - {fileID: 7349349770081643136, guid: ea9fc687b6bea4d419e1803cb552ca2c, type: 3}
+  - {fileID: 7349349770081643136, guid: 46153526047c863409af6ed910ae5cf9, type: 3}
   - {fileID: 277427285229296074, guid: 44b9f75e4353c344fb0366a53467cfe5, type: 3}
   - {fileID: 2118418972638656143, guid: 1047be47ccfde6c479fb78f0830a0221, type: 3}
   obstaclePrefabs:
-  - {fileID: 7349349770081643136, guid: ea9fc687b6bea4d419e1803cb552ca2c, type: 3}
-  - {fileID: 277427285229296074, guid: 44b9f75e4353c344fb0366a53467cfe5, type: 3}
-  - {fileID: 2118418972638656143, guid: 1047be47ccfde6c479fb78f0830a0221, type: 3}
+  - {fileID: 7349349770081643136, guid: 99f36ccfba94293419e2a1d8aabc52ff, type: 3}
+  - {fileID: 277427285229296074, guid: 7eaa3f32870e2234cb3fbc8d8d8e4bc5, type: 3}
+  - {fileID: 2118418972638656143, guid: 37f50c82e0b66da4ba45d1ea0caca196, type: 3}
 --- !u!114 &608788812
 MonoBehaviour:
   m_ObjectHideFlags: 0
