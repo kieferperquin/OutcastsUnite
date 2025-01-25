@@ -22,10 +22,14 @@ public class PhraseManager : MonoBehaviour
     private void Start()
     {
         SetPhrase();
+    }
+
+    public void SpawnNewSetOfPhrases()
+    {
         SpawnNewPhrases(LevelHolder.Instance.PhraseLibraries[LevelIndex]);
     }
 
-    public void SpawnNewPhrases(PhraseLibrary library)
+    void SpawnNewPhrases(PhraseLibrary library)
     {
         Instance.PhraseLib = library;
         
