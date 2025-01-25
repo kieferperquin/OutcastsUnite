@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class WordBubble : Bubble
 {
     [SerializeField] private GameObject bubbleWord;
+    [SerializeField] private Segment segment;
 
     public bool canMove = true;
 
@@ -23,12 +24,13 @@ public class WordBubble : Bubble
         ChangeTargetPos(collision);
     }
 
-    public string GetWord()
+    public Segment GetSegment()
     {
-        return bubbleWord.GetComponent<Text>().text;
+        return segment;
     }
-    public void GiveWord(string word)
+    public void SetSegment(Segment sgmt)
     {
-        bubbleWord.GetComponent<Text>().text = word;
+        segment = sgmt;
+        bubbleWord.GetComponent<Text>().text = segment.text;
     }
 }

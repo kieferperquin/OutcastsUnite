@@ -31,7 +31,7 @@ public class Selector : MonoBehaviour
 
         if(other.CompareTag("Player"))
         {
-            BubbleConnectionManager.instance.CheckCentence();
+            BubbleConnectionManager.instance.CheckSentence();
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BubbleConnectionManager : MonoBehaviour
@@ -38,27 +39,37 @@ public class BubbleConnectionManager : MonoBehaviour
         }
     }
 
-    public void CheckCentence()
+    public void CheckSentence()
     {
+        /// send the list selectedBubbles to check the sentence
+        List<string> currentPhrase = new List<string>();
+        List<string> controlPhrase = PhraseManager.Instance.GetPhrase();
+
+        foreach (GameObject currentWord in selectedBubbles)
+        {
+            currentPhrase.Add(currentWord.GetComponent<WordBubble>().GetSegment().text);
+            Debug.Log(currentWord.GetComponent<WordBubble>().GetSegment().text);
+        }
         
-        /// send the list selectedBubbles to check the centence
+        if (currentPhrase.SequenceEqual(controlPhrase))
+        {
+            Debug.Log("YESSSS");
+        }
 
-        Debug.Log("check");
-
-        /// if the centence is correct then delete the bubbles the centence was made with
+        /// if the sentence is correct then delete the bubbles the sentence was made with
         
         MakeListEmpty();
     }
 
     public void Deselect()
     {
-        string centence = null;
-        foreach (GameObject newWord in selectedBubbles)
+        string sentence = null;
+        foreach (GameObject currentWord in selectedBubbles)
         {
-            centence += newWord.GetComponent<WordBubble>().GetWord() + " ";
+            sentence += currentWord.GetComponent<WordBubble>().GetSegment().text + " ";
         }
 
-        Debug.Log(centence);
+        Debug.Log(sentence);
 
         Destroy(selector);
 

@@ -16,11 +16,13 @@ public class PhraseManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        SetPhrase();
     }
 
     public PhraseLibrary PhraseLib;
     public int PhraseID;
-    private List<string> currentPhrase;
+    [SerializeField] private List<string> currentPhrase;
 
     public void SetPhrase()
     {
