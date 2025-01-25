@@ -6,6 +6,8 @@ public class PhraseManager : MonoBehaviour
 {
     public static PhraseManager Instance { get; private set; }
     public int LevelIndex = 0;
+    public PhraseLibrary PhraseLib;
+    [SerializeField] private List<List<string>> currentPhrases = new List<List<string>>();
 
     private void Awake()
     {
@@ -21,41 +23,63 @@ public class PhraseManager : MonoBehaviour
 
     private void Start()
     {
-        SetPhrase();
+        SpawnNewSetOfPhrases();
     }
 
     public void SpawnNewSetOfPhrases()
     {
-        SpawnNewPhrases(LevelHolder.Instance.PhraseLibraries[LevelIndex]);
+
+        if (LevelIndex < LevelHolder.Instance.PhraseLibraries.Count)
+        {
+            SpawnNewPhrases(LevelHolder.Instance.PhraseLibraries[LevelIndex]);
+        }
+        else
+        {
+            /// win screen
+        }
     }
 
     void SpawnNewPhrases(PhraseLibrary library)
     {
         Instance.PhraseLib = library;
-        
-        foreach (Segment sgmt in PhraseManager.Instance.GetSegments())
-        {
-            BubbleSpawner.Instance.SpawnBubble(sgmt);
-        }
-    }
+     
+        SetPhrases();
 
-    public PhraseLibrary PhraseLib;
-    public int PhraseID;
-    [SerializeField] private List<string> currentPhrase;
+        int phraseID = 0;
 
-    public void SetPhrase()
-    {
-        foreach (Segment phraseSgmt in PhraseLib.Phrases[PhraseID].Segments)
+        foreach (List<string> _ in currentPhrases)
         {
-            if (phraseSgmt.GetType() == typeof(PhraseSegment))
+            
+            foreach (Segment sgmt in Instance.GetSegments(phraseID))
             {
-                currentPhrase.Add(phraseSgmt.text);
+                BubbleSpawner.Instance.SpawnBubble(sgmt);
             }
+
+            phraseID++;
+        }
+
+        Player.Instance.SetRings(currentPhrases.Count);
+    }
+
+    public void SetPhrases()
+    {
+        for (int phraseID = 0; phraseID < PhraseLib.Phrases.Count; phraseID++)
+        {
+            List<string> currentPhrase = new List<string>();
+
+            foreach (Segment segment in PhraseLib.Phrases[phraseID].Segments)
+            {
+                if (segment.GetType() == typeof(PhraseSegment))
+                {
+                    currentPhrase.Add(segment.text);
+                }
+            }
+
+            currentPhrases.Add(currentPhrase);
         }
     }
 
-    public void ClearPhrase() { currentPhrase.Clear(); }
-
-    public List<string> GetPhrase() { return currentPhrase; }
-    public List<Segment> GetSegments() { return PhraseLib.Phrases[PhraseID].Segments; }
+    public void ClearPhrase() { currentPhrases.Clear(); }
+    public List<List<string>> GetPhrases() { return currentPhrases; }
+    public List<Segment> GetSegments(int phraseID) { return PhraseLib.Phrases[phraseID].Segments; }
 }

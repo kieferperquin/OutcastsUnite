@@ -57,19 +57,22 @@ public class BubbleConnectionManager : MonoBehaviour
     public void CheckSentence()
     {
         List<string> currentPhrase = new List<string>();
-        List<string> controlPhrase = PhraseManager.Instance.GetPhrase();
+        List<List<string>> controlPhrases = PhraseManager.Instance.GetPhrases();
 
         foreach (GameObject currentWord in selectedBubbles)
         {
             currentPhrase.Add(currentWord.GetComponent<WordBubble>().GetSegment().text);
         }
-        
-        if (currentPhrase.SequenceEqual(controlPhrase))
+
+        foreach (List<string> controlPhrase in controlPhrases)
         {
-            Player.Instance.CorrectSentence();
-            foreach (GameObject go in selectedBubbles)
+            if (currentPhrase.SequenceEqual(controlPhrase))
             {
-                Destroy(go);
+                Player.Instance.CorrectSentence();
+                foreach (GameObject go in selectedBubbles)
+                {
+                    Destroy(go);
+                }
             }
         }
         
@@ -83,8 +86,6 @@ public class BubbleConnectionManager : MonoBehaviour
         {
             sentence += currentWord.GetComponent<WordBubble>().GetSegment().text + " ";
         }
-
-        Debug.Log(sentence);
 
         Destroy(selector);
 

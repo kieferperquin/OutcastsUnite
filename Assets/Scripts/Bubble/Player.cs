@@ -57,6 +57,12 @@ public class Player : Bubble
         }
     }
 
+    public void SetRings(int rings)
+    {
+        amountProtection = rings;
+        ChangeVisuals();
+    }
+
     void ChangeVisuals()
     {
         ClearList(spawnedProtection);
