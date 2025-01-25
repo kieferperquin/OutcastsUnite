@@ -356,8 +356,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1522544273693501764}
   - {fileID: 6444083954459574907}
@@ -377,6 +377,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   protactiveBubble: {fileID: 1212747318441133786, guid: 4398fa867820b08489f60a099851a53f, type: 3}
+  pbPlacement: {fileID: 774061183632356501}
+  amountProtection: 3
+  rotationSpeed: 0.015
 --- !u!135 &3630141788245113879
 SphereCollider:
   m_ObjectHideFlags: 0
