@@ -4,18 +4,48 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     [SerializeField] private GameObject protactiveBubble;
+    [SerializeField] private GameObject pbPlacement;
+    int amountProtection;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        Movement();
+    }
+
+    void Movement()
+    {
+
+    }
+
+    public void CorrectCentance()
+    {
+        amountProtection -= 1;
+
+        ChangeVisuals();
+
+        if (amountProtection <= 0)
+        {
+            /// win / clear level
+        }
+    }
+
+    void ChangeVisuals()
+    {
+
     }
 }
