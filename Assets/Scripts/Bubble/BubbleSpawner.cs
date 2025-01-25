@@ -24,15 +24,13 @@ public class BubbleSpawner : MonoBehaviour
 
     public void SpawnBubble(Segment segment)
     {
-        int prefabID;
-        GameObject prefab;
-        
         // Determine word length / bubble size
+        int prefabID = 2;
+        if (segment.text.Length < 24) { prefabID = 1; }
         if (segment.text.Length < 13) { prefabID = 0; }
-        else if (13 >= segment.text.Length && segment.text.Length < 24) { prefabID = 1; }
-        else { prefabID = 2; }
 
         // Determine bubble type.
+        GameObject prefab;
         if (segment.GetType() == typeof(PhraseSegment)) { prefab = bubblePrefabs[prefabID]; }
         else { prefab = obstaclePrefabs[prefabID]; }
 
