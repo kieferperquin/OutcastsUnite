@@ -6,26 +6,61 @@ using UnityEngine.UI;
 
 public class Bubble : MonoBehaviour
 {
-    [SerializeField] private GameObject bubbleWord;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float moveSpeed;
 
-    public bool canMove = true;
+    [SerializeField] private float areaSize;
 
-    private void Update()
+    private Vector3 targetPos;
+
+    public void Movement()
     {
-        if (canMove) Movement();
+        if (targetPos == null)
+        {
+            targetPos = GetRandomPos(transform.position);
+        }
+        if (targetPos == transform.position)
+        {
+            targetPos = GetRandomPos(transform.position);
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
     }
 
-    void Movement()
+    Vector3 GetRandomPos(Vector2 currLoc)
     {
+        Vector2 areaAddetive = new Vector2(areaSize, areaSize);
 
+        Vector2 maxArea = currLoc + areaAddetive;
+        Vector2 minArea = currLoc - areaAddetive;
+
+        return CheckAllowed(new Vector3(Random.Range(maxArea.x, minArea.x), Random.Range(maxArea.y, minArea.y), 0));
     }
 
-    public string GetWord()
+    Vector3 CheckAllowed(Vector3 pos)
     {
-        return bubbleWord.GetComponent<Text>().text;
+        float X = 5.2f;
+        float Y = 2.5f;
+
+        pos.x = Mathf.Clamp(pos.x, -X, X);
+        pos.y = Mathf.Clamp(pos.y, -Y, Y);
+
+        return pos;
     }
-    public void GiveWord(string word)
+    public void RotateBubble()
     {
-        bubbleWord.GetComponent<Text>().text = word;
+        transform.Rotate(new Vector3(0, 0, rotationSpeed));
+    }
+
+    public void ChangeTargetPos(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bubble"))
+        {
+            targetPos = GetRandomPos(transform.position);
+        }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            targetPos = GetRandomPos(transform.position);
+        }
     }
 }

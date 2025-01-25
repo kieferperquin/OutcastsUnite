@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 608788812}
   - component: {fileID: 608788811}
   - component: {fileID: 608788813}
+  - component: {fileID: 608788814}
   m_Layer: 0
   m_Name: -_- SYSTEMS -_-
   m_TagString: Untagged
@@ -289,9 +290,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ee1e14c57a5cc41af371ec1c08966b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleContainer: {fileID: 0}
-  bubblePrefabs: []
-  obstaclePrefabs: []
+  bubbleContainer: {fileID: 1642740669}
+  bubblePrefabs:
+  - {fileID: 7349349770081643136, guid: 46153526047c863409af6ed910ae5cf9, type: 3}
+  - {fileID: 277427285229296074, guid: 44b9f75e4353c344fb0366a53467cfe5, type: 3}
+  - {fileID: 2118418972638656143, guid: 1047be47ccfde6c479fb78f0830a0221, type: 3}
+  obstaclePrefabs:
+  - {fileID: 7349349770081643136, guid: 99f36ccfba94293419e2a1d8aabc52ff, type: 3}
+  - {fileID: 277427285229296074, guid: 7eaa3f32870e2234cb3fbc8d8d8e4bc5, type: 3}
+  - {fileID: 2118418972638656143, guid: 37f50c82e0b66da4ba45d1ea0caca196, type: 3}
 --- !u!114 &608788812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +324,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f547cde207777148971d19146aaabbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &608788814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608788809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4764fdfb5eed647a41850ca0e50a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PhraseLib: {fileID: 11400000, guid: 85fa6fe9c62cbe64e9ca856cbd824645, type: 2}
+  PhraseID: 0
 --- !u!1 &762290059
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,10 +453,6 @@ PrefabInstance:
     - target: {fileID: 814087022496700522, guid: d358cb4c9490c344e965a8353688ad35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7517970406426441066, guid: d358cb4c9490c344e965a8353688ad35, type: 3}
-      propertyPath: areaSize
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8016356419084035231, guid: d358cb4c9490c344e965a8353688ad35, type: 3}
       propertyPath: m_Name

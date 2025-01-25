@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Bubble
 {
     public static Player Instance;
 
@@ -12,11 +12,6 @@ public class Player : MonoBehaviour
     [SerializeField] int amountProtection;
 
     List<GameObject> spawnedProtection = new List<GameObject>();
-
-    [SerializeField] private float areaSize;
-
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] private float moveSpeed;
 
     private void Awake()
     {
@@ -29,6 +24,7 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
         ChangeVisuals();
+
     }
 
     private void Update()
@@ -37,31 +33,13 @@ public class Player : MonoBehaviour
         RotateBubble();
     }
 
-    void Movement()
+    private void OnCollisionEnter(Collision collision)
     {
-        Vector3 newLoc = GetRandomPos(transform.position);
-
-        Debug.Log(newLoc);
-
-        /// use the newLoc vector to move with the moveSpeed variable
-
-
+        ChangeTargetPos(collision);
     }
-
-
-    Vector3 GetRandomPos(Vector2 currLoc)
+    private void OnCollisionStay(Collision collision)
     {
-        Vector2 areaAddetive = new Vector2(areaSize, areaSize);
-
-        Vector2 maxArea = currLoc + areaAddetive;
-        Vector2 minArea = currLoc - areaAddetive;
-
-        return new Vector3(Random.Range(maxArea.x, minArea.x), Random.Range(maxArea.y, minArea.y), 0);
-    }
-
-    void RotateBubble()
-    {
-        transform.Rotate(new Vector3(0, 0, rotationSpeed));
+        ChangeTargetPos(collision);
     }
 
     public void CorrectCentance()
@@ -93,7 +71,6 @@ public class Player : MonoBehaviour
             spawnedProtection.Add(protection);
         }
     }
-
 
     void ClearList(List<GameObject> listToChange)
     {

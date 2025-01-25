@@ -32,7 +32,7 @@ public class BubbleConnectionManager : MonoBehaviour
         {
             selectedBubbles.Add(newWord);
 
-            newWord.GetComponent<Bubble>().canMove = false;
+            newWord.GetComponent<WordBubble>().canMove = false;
 
             SendDataForConnection();
         }
@@ -55,7 +55,7 @@ public class BubbleConnectionManager : MonoBehaviour
         string centence = null;
         foreach (GameObject newWord in selectedBubbles)
         {
-            centence += newWord.GetComponent<Bubble>().GetWord() + " ";
+            centence += newWord.GetComponent<WordBubble>().GetWord() + " ";
         }
 
         Debug.Log(centence);
@@ -64,7 +64,7 @@ public class BubbleConnectionManager : MonoBehaviour
 
         foreach (GameObject word in selectedBubbles)
         {
-            word.GetComponent<Bubble>().canMove = true;
+            word.GetComponent<WordBubble>().canMove = true;
 
             /// make the lines that are connected to this bubble dissapear
 

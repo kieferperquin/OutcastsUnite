@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891725041042228971}
-  - component: {fileID: 2552135235159410007}
+  - component: {fileID: -1425470419159275555}
   - component: {fileID: 7114830399010441711}
   - component: {fileID: 3580547635946260358}
   m_Layer: 0
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 3839990968172238555}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2552135235159410007
+--- !u!114 &-1425470419159275555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,9 +45,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 277427285229296074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b771012051852b44e8a986d7fd3fb852, type: 3}
+  m_Script: {fileID: 11500000, guid: ddd368a06c1e84640b6530f455a816ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 0
+  moveSpeed: 0.25
+  areaSize: 1
   bubbleWord: {fileID: 1470730547561589672}
   canMove: 1
 --- !u!135 &7114830399010441711

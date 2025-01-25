@@ -379,7 +379,9 @@ MonoBehaviour:
   protactiveBubble: {fileID: 1212747318441133786, guid: 4398fa867820b08489f60a099851a53f, type: 3}
   pbPlacement: {fileID: 774061183632356501}
   amountProtection: 3
+  areaSize: 1
   rotationSpeed: 0.015
+  moveSpeed: 0.25
 --- !u!135 &3630141788245113879
 SphereCollider:
   m_ObjectHideFlags: 0

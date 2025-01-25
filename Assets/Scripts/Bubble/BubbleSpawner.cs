@@ -37,6 +37,6 @@ public class BubbleSpawner : MonoBehaviour
         //give the bubble a random position
         GameObject bubble = Instantiate(prefab, new Vector3(0,0,0), Quaternion.identity, bubbleContainer.transform);
 
-        bubble.GetComponent<Bubble>().GiveWord(segment.text);
+        bubble.GetComponent<WordBubble>().GiveWord(segment.text);
     }
 }
