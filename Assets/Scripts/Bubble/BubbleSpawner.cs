@@ -39,4 +39,13 @@ public class BubbleSpawner : MonoBehaviour
 
         bubble.GetComponent<WordBubble>().SetSegment(segment);
     }
+
+    public void LevelClear()
+    {
+        while(bubbleContainer.transform.childCount > 0)
+        {
+            Destroy(bubbleContainer.transform.GetChild(0).gameObject);   
+        }
+        PhraseManager.Instance.SpawnNewSetOfPhrases();
+    }
 }

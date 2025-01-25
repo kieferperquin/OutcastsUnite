@@ -53,6 +53,7 @@ public class Player : Bubble
         if (amountProtection <= 0)
         {
             /// win / clear level
+            BubbleSpawner.Instance.LevelClear();
         }
     }
 
