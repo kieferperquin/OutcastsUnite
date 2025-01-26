@@ -395,7 +395,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 41d6c746706e6164c81172f028afffa2, type: 3}
   - {fileID: 21300000, guid: 6bffe44921858fa4ea259076ab25870e, type: 3}
   - {fileID: 21300000, guid: 816eb5096000c6b4ba6a1bd2d3a9e9e4, type: 3}
-  displayTime: 0.1
+  displayTime: 3
 --- !u!212 &135740379
 SpriteRenderer:
   m_ObjectHideFlags: 0
