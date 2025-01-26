@@ -70,7 +70,6 @@ public class SpriteSwapper : MonoBehaviour
             BubbleSpawner.Instance.SpawnPlayer();
             PhraseManager.Instance.SpawnNewSetOfPhrases();
             AudioManager.Instance.PlayMusic();
-
         }
     }
 }

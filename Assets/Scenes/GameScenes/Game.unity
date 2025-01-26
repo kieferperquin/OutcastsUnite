@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 123648516}
   m_Layer: 0
   m_Name: DiagonalBorders
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 41d6c746706e6164c81172f028afffa2, type: 3}
   - {fileID: 21300000, guid: 6bffe44921858fa4ea259076ab25870e, type: 3}
   - {fileID: 21300000, guid: 816eb5096000c6b4ba6a1bd2d3a9e9e4, type: 3}
-  displayTime: 1
+  displayTime: 0.1
 --- !u!212 &135740379
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3278,7 +3278,7 @@ GameObject:
   - component: {fileID: 1308510682}
   m_Layer: 0
   m_Name: ScreenBorders
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3794,7 +3794,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1923
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
@@ -5076,8 +5076,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhraseLibraries:
-  - {fileID: 11400000, guid: 1fa78876e55c682408c423909e2d5cfa, type: 2}
-  - {fileID: 11400000, guid: 1fa78876e55c682408c423909e2d5cfa, type: 2}
+  - {fileID: 11400000, guid: 64c0c03e827253f4f85f60b6f10b2d13, type: 2}
+  - {fileID: 11400000, guid: 64c0c03e827253f4f85f60b6f10b2d13, type: 2}
 --- !u!114 &1897631832
 MonoBehaviour:
   m_ObjectHideFlags: 0

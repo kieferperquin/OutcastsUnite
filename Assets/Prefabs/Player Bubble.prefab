@@ -486,6 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09837172b612f7546b9977fc3e058ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VfxObj: {fileID: 0}
   rotationSpeed: 0.015
   moveSpeed: 0.25
   areaSize: 1
@@ -539,7 +540,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!33 &4480098493714092245
 MeshFilter:

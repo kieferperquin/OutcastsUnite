@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayConnSound(int index)
     {
-        ConnFX[index - 1 % 5].Play();
+        ConnFX[(index - 1) % 5].Play();
     }
 
     public void PlayBadConnSound()

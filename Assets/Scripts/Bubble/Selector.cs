@@ -14,7 +14,7 @@ public class Selector : MonoBehaviour
     void Update()
     {
         pos = Input.mousePosition;
-        pos.z = 6;
+        pos.z = 11.8f;
         pos = Camera.main.ScreenToWorldPoint(pos);
         pos.z = 0;
         transform.position = pos;
