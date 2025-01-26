@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PhraseManager : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class PhraseManager : MonoBehaviour
         }
         else
         {
-            /// win screen
+            SceneManager.LoadScene("Win");
         }
     }
 
