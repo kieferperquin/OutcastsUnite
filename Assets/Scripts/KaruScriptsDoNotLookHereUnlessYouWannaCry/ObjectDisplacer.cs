@@ -8,6 +8,7 @@ public class ObjectDisplacer : MonoBehaviour
     [SerializeField] private Transform target1;
     [SerializeField] private Transform target2;
     [SerializeField] private Transform target3;
+    [SerializeField] private Transform cameraTarget;
 
     [SerializeField] private float movementSpeed = 1.0f;
     [SerializeField] private float smoothFactor = 0.1f;
@@ -15,7 +16,7 @@ public class ObjectDisplacer : MonoBehaviour
     private int targetIndex = 0;
     private float lerpTime = 0f;
 
-    private Vector3 cameraTargetPosition = new Vector3(-12f, 0f, 0f);
+    private Vector3 cameraTargetPosition = new Vector3(0f, 0f, -12f);
     [SerializeField] private Camera mainCamera;
 
     private float cameraMoveDuration = 30.0f;
@@ -87,7 +88,7 @@ public class ObjectDisplacer : MonoBehaviour
             cameraLerpProgress = Mathf.Clamp01(cameraLerpProgress);
 
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, cameraTargetPosition, cameraLerpProgress);
-            mainCamera.transform.rotation = Quaternion.Lerp(mainCamera.transform.rotation, Quaternion.Euler(0, 90, 0), cameraLerpProgress);
+            mainCamera.transform.rotation = Quaternion.Lerp(mainCamera.transform.rotation, Quaternion.Euler(0, 0, 0), cameraLerpProgress);
 
             if (cameraLerpProgress >= 0.9f)
             {
