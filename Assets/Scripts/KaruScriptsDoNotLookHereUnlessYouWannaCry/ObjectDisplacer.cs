@@ -16,7 +16,7 @@ public class ObjectDisplacer : MonoBehaviour
     private int targetIndex = 0;
     private float lerpTime = 0f;
 
-    private Vector3 cameraTargetPosition = new Vector3(0f, 0f, -12f);
+    private Vector3 cameraTargetPosition = new Vector3(0f, 0f, -16f);
     [SerializeField] private Camera mainCamera;
 
     private float cameraMoveDuration = 30.0f;

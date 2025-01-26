@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4961180c9946f3e4e94ab96bb4788799, type: 3}
+  m_Name: LV2
+  m_EditorClassIdentifier: 
+  Phrases:
+  - Segments:
+    - rid: 1628620291779067907
+    - rid: 1628620291779067908
+    - rid: 1628620291779067909
+    - rid: 8391031328911130627
+    - rid: 8391031328911130626
+    - rid: 8391031328911130631
+    - rid: 8391031328911130629
+    - rid: 8391031328911130632
+    - rid: 8391031328911130633
+    - rid: 8391031328911130634
+  - Segments:
+    - rid: 1628620314182418437
+    - rid: 1628620314182418438
+    - rid: 1628620314182418439
+    - rid: 1628620314182418440
+    - rid: 1628620314182418441
+  - Segments:
+    - rid: 1628620314182418442
+    - rid: 1628620314182418445
+    - rid: 1628620314182418444
+    - rid: 1628620314182418448
+    - rid: 1628620314182418450
+  references:
+    version: 2
+    RefIds:
+    - rid: 1628620291779067907
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: Hey, would you
+    - rid: 1628620291779067908
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: mind helping
+    - rid: 1628620291779067909
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: me
+    - rid: 1628620314182418437
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: How did
+    - rid: 1628620314182418438
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: your exam go,
+    - rid: 1628620314182418439
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: by the way?
+    - rid: 1628620314182418440
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: uh...
+    - rid: 1628620314182418441
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: well, actually...
+    - rid: 1628620314182418442
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: What class
+    - rid: 1628620314182418444
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: headed
+    - rid: 1628620314182418445
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: are you
+    - rid: 1628620314182418448
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: to next?
+    - rid: 1628620314182418450
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: What c-class...
+    - rid: 8391031328911130626
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: problem
+    - rid: 8391031328911130627
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: solve this
+    - rid: 8391031328911130629
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: Uh...
+    - rid: 8391031328911130631
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: I'm having?
+    - rid: 8391031328911130632
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: umm
+    - rid: 8391031328911130633
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: never mind
+    - rid: 8391031328911130634
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: awkward

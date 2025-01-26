@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4961180c9946f3e4e94ab96bb4788799, type: 3}
+  m_Name: LV1
+  m_EditorClassIdentifier: 
+  Phrases:
+  - Segments:
+    - rid: 1628620291779067907
+    - rid: 1628620291779067908
+    - rid: 1628620291779067909
+    - rid: 8391031328911130627
+    - rid: 8391031328911130626
+    - rid: 8391031328911130631
+    - rid: 8391031328911130629
+    - rid: 8391031328911130632
+    - rid: 8391031328911130633
+    - rid: 8391031328911130634
+  - Segments:
+    - rid: 8391031328911130640
+    - rid: 8391031328911130641
+    - rid: 8391031328911130642
+    - rid: 8391031328911130643
+    - rid: 8391031328911130645
+    - rid: 8391031328911130639
+    - rid: 8391031328911130646
+    - rid: 8391031328911130647
+    - rid: 8391031328911130648
+    - rid: 8391031328911130649
+  - Segments:
+    - rid: 8391031328911130650
+    - rid: 8391031328911130651
+    - rid: 8391031328911130652
+    - rid: 8391031328911130653
+    - rid: 8391031328911130654
+    - rid: 8391031328911130655
+    - rid: 8391031328911130656
+    - rid: 8391031328911130657
+    - rid: 8391031328911130658
+    - rid: 8391031328911130659
+  references:
+    version: 2
+    RefIds:
+    - rid: 1628620291779067907
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: Hey, Avery,
+    - rid: 1628620291779067908
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: It's been
+    - rid: 1628620291779067909
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: a long
+    - rid: 8391031328911130626
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: since we
+    - rid: 8391031328911130627
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: time
+    - rid: 8391031328911130629
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: Uh...
+    - rid: 8391031328911130631
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: last talked.
+    - rid: 8391031328911130632
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: umm
+    - rid: 8391031328911130633
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: never mind
+    - rid: 8391031328911130634
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: awkward
+    - rid: 8391031328911130639
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: together.
+    - rid: 8391031328911130640
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: I really
+    - rid: 8391031328911130641
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: miss
+    - rid: 8391031328911130642
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: those summer
+    - rid: 8391031328911130643
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: afternoons
+    - rid: 8391031328911130645
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: we spent
+    - rid: 8391031328911130646
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: never mind
+    - rid: 8391031328911130647
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: you probably forgot
+    - rid: 8391031328911130648
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: I should go
+    - rid: 8391031328911130649
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: this is dumb
+    - rid: 8391031328911130650
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: I'm sorry
+    - rid: 8391031328911130651
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: we drifted
+    - rid: 8391031328911130652
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: apart,
+    - rid: 8391031328911130653
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: but
+    - rid: 8391031328911130654
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: I'd love to
+    - rid: 8391031328911130655
+      type: {class: PhraseSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: catch up.
+    - rid: 8391031328911130656
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: uh...
+    - rid: 8391031328911130657
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: umm
+    - rid: 8391031328911130658
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: I suck at this
+    - rid: 8391031328911130659
+      type: {class: ObstacleSegment, ns: , asm: Assembly-CSharp}
+      data:
+        text: uh, bye.
