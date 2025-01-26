@@ -354,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PhraseLibraries:
   - {fileID: 11400000, guid: 1fa78876e55c682408c423909e2d5cfa, type: 2}
+  - {fileID: 11400000, guid: 1fa78876e55c682408c423909e2d5cfa, type: 2}
 --- !u!1 &762290059
 GameObject:
   m_ObjectHideFlags: 0

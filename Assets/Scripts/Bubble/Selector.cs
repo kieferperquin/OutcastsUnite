@@ -29,8 +29,6 @@ public class Selector : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log(1);
-
             BubbleConnectionManager.Instance.CheckSentence();
         }
     }

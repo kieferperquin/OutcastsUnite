@@ -52,7 +52,10 @@ public class BubbleSpawner : MonoBehaviour
             Destroy(bubble.gameObject);
         }
 
-        PhraseManager.Instance.LevelIndex++;
-        PhraseManager.Instance.SpawnNewSetOfPhrases();
+        PhraseManager manager = PhraseManager.Instance;
+
+        manager.LevelIndex++;
+        manager.ClearPhrase();
+        manager.SpawnNewSetOfPhrases();
     }
 }
