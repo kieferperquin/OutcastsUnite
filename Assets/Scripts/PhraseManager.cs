@@ -21,13 +21,6 @@ public class PhraseManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        
-        SpawnNewSetOfPhrases();
-        
-    }
-
     public void SpawnNewSetOfPhrases()
     {
 

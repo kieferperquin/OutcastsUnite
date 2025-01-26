@@ -12,6 +12,8 @@ public class SpriteSwapper : MonoBehaviour
     private float timeElapsed = 0f;
     private bool isSwapping = false;
 
+    bool canStart = true;
+
     private void Start()
     {
         if (spriteRenderer == null)
@@ -27,7 +29,7 @@ public class SpriteSwapper : MonoBehaviour
 
     private void Update()
     {
-        if (currentSpriteIndex >= 21) //TODO
+        if (currentSpriteIndex >= 21)
         {
             StopSwapping();
         }
@@ -41,7 +43,6 @@ public class SpriteSwapper : MonoBehaviour
                 timeElapsed = 0f;
                 currentSpriteIndex = (currentSpriteIndex + 1) % spriteArray.Length;
                 spriteRenderer.sprite = spriteArray[currentSpriteIndex];
-                Debug.Log($"Sprite swapped to index: {currentSpriteIndex}");  // This will print every time the sprite swaps
             }
         }
     }
@@ -50,11 +51,9 @@ public class SpriteSwapper : MonoBehaviour
     {
         if (spriteArray == null || spriteArray.Length == 0)
         {
-            Debug.LogWarning("SpriteSwapper: No sprites assigned!");
             return;
         }
 
-        Debug.Log("Sprite swapping started!");
         isSwapping = true;
         timeElapsed = 0f;
         currentSpriteIndex = 0;
@@ -64,5 +63,14 @@ public class SpriteSwapper : MonoBehaviour
     public void StopSwapping()
     {
         isSwapping = false;
+        if (canStart)
+        {
+            canStart = false;
+
+            BubbleSpawner.Instance.SpawnPlayer();
+            PhraseManager.Instance.SpawnNewSetOfPhrases();
+            AudioManager.Instance.PlayMusic();
+
+        }
     }
 }

@@ -52,7 +52,6 @@ public class ObjectDisplacer : MonoBehaviour
                 // Trigger sprite swapping
                 if (spriteSwapper != null)
                 {
-                    Debug.Log("Triggering StartSwapping from ObjectDisplacer...");
                     spriteSwapper.StartSwapping();
                 }
                 isMovingCamera = true;
