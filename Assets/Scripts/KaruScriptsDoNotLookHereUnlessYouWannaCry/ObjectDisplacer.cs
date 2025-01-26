@@ -22,6 +22,8 @@ public class ObjectDisplacer : MonoBehaviour
     private float cameraLerpProgress = 0f;
     private bool isMovingCamera = false;
 
+    [SerializeField] private SpriteSwapper spriteSwapper;
+
     void Start()
     {
         if (mainCamera == null)
@@ -46,6 +48,12 @@ public class ObjectDisplacer : MonoBehaviour
 
             if (targetIndex == 3)
             {
+                // Trigger sprite swapping
+                if (spriteSwapper != null)
+                {
+                    Debug.Log("Triggering StartSwapping from ObjectDisplacer...");
+                    spriteSwapper.StartSwapping();
+                }
                 isMovingCamera = true;
             }
         }
@@ -79,13 +87,12 @@ public class ObjectDisplacer : MonoBehaviour
             cameraLerpProgress = Mathf.Clamp01(cameraLerpProgress);
 
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, cameraTargetPosition, cameraLerpProgress);
-
             mainCamera.transform.rotation = Quaternion.Lerp(mainCamera.transform.rotation, Quaternion.Euler(0, 90, 0), cameraLerpProgress);
 
-            if (cameraLerpProgress >= 1.0f)
+            if (cameraLerpProgress >= 0.9f)
             {
-                isMovingCamera = false; // Stop the camera movement
-                cameraLerpProgress = 0f;
+                cameraLerpProgress = 1.0f; // Snap to final value
+                isMovingCamera = false;    // Stop the camera movement
             }
         }
         else
