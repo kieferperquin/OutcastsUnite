@@ -23,6 +23,8 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void PlayMusic()
