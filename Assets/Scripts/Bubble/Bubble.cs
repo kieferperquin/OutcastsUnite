@@ -28,11 +28,11 @@ public class Bubble : MonoBehaviour
 
         if (targetPos == null)
         {
-            targetPos = GetRandomPos(transform.position);
+            GetNewPosition();
         }
         if (targetPos == transform.position)
         {
-            targetPos = GetRandomPos(transform.position);
+            GetNewPosition();
         }
 
         transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
@@ -67,12 +67,21 @@ public class Bubble : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bubble"))
         {
-            targetPos = GetRandomPos(transform.position);
+            GetNewPosition();
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            targetPos = GetRandomPos(transform.position);
+            GetNewPosition();
         }
+        if(collision.gameObject.CompareTag("Wall"))
+        {
+            GetNewPosition();
+        }
+    }
+
+    void GetNewPosition()
+    {
+        targetPos = GetRandomPos(transform.position);
     }
 
     private void OnDestroy()
