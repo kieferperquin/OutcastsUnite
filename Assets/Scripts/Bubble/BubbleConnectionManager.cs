@@ -25,6 +25,8 @@ public class BubbleConnectionManager : MonoBehaviour
     public void Select()
     {
         selector = Instantiate(selectorPrefab);
+
+        ConnectionVisualizer.Instance.GiveMouseObj(selector);
     }
 
     public void NewWordCheck(GameObject newWord)
@@ -34,8 +36,6 @@ public class BubbleConnectionManager : MonoBehaviour
             selectedBubbles.Add(newWord);
 
             WordBubble word = newWord.GetComponent<WordBubble>();
-
-            Debug.Log(word.GetSegment().GetType());
 
             if (word.GetSegment().GetType() == typeof(PhraseSegment))
             {
@@ -93,8 +93,7 @@ public class BubbleConnectionManager : MonoBehaviour
         {
             word.GetComponent<WordBubble>().canMove = true;
 
-            /// make the lines that are connected to this bubble dissapear
-
+            ConnectionVisualizer.Instance.ClearConnections();
         }
 
         MakeListEmpty();
@@ -107,12 +106,6 @@ public class BubbleConnectionManager : MonoBehaviour
 
     void SendDataForConnection()
     {
-        if (selectedBubbles.Count <= 1) return;
-
-        GameObject pointA = selectedBubbles[selectedBubbles.Count - 2];
-        GameObject pointB = selectedBubbles[selectedBubbles.Count - 1];
-
-        /// send pointA and pointB to connectionvisualizer script
-        ConnectionVisualizer.Instance.Connect(pointA, pointB);
+        ConnectionVisualizer.Instance.Connect(selectedBubbles[selectedBubbles.Count - 1]);
     }
 }
