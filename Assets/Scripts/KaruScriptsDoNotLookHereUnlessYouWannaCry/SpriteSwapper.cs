@@ -63,7 +63,6 @@ public class SpriteSwapper : MonoBehaviour
 
     public void StopSwapping()
     {
-        Debug.Log("Sprite swapping stopped!");
         isSwapping = false;
     }
 }
