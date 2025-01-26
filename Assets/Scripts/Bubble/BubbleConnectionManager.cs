@@ -39,12 +39,16 @@ public class BubbleConnectionManager : MonoBehaviour
 
             if (word.GetSegment().GetType() == typeof(PhraseSegment))
             {
+                AudioManager.Instance.PlayConnSound(selectedBubbles.Count);
+
                 word.canMove = false;
 
                 SendDataForConnection();
             }
             else
             {
+                AudioManager.Instance.PlayBadConnSound();
+
                 BubbleSpawner.Instance.SpawnBubble(word.GetSegment());
 
                 Destroy(word.gameObject);
