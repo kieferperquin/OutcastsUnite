@@ -56,48 +56,44 @@ public class BubbleConnectionManager : MonoBehaviour
 
     public void CheckSentence()
     {
-        Debug.Log(2);
+        ConnectionVisualizer.Instance.ClearConnections();
+
         List<string> currentPhrase = new List<string>();
         List<List<string>> controlPhrases = PhraseManager.Instance.GetPhrases();
 
-        Debug.Log(3);
         foreach (GameObject currentWord in selectedBubbles)
         {
             currentPhrase.Add(currentWord.GetComponent<WordBubble>().GetSegment().text);
         }
 
-        Debug.Log(4);
         foreach (List<string> controlPhrase in controlPhrases)
         {
             if (currentPhrase.SequenceEqual(controlPhrase))
             {
                 Player.Instance.CorrectSentence();
-                foreach (GameObject go in selectedBubbles)
+                foreach (GameObject bubbleObj in selectedBubbles)
                 {
-                    Destroy(go);
+                    Destroy(bubbleObj);
                 }
             }
         }
-        Debug.Log(5);
 
         Deselect();
     }
 
     public void Deselect()
     {
-        string sentence = null;
-        foreach (GameObject currentWord in selectedBubbles)
-        {
-            sentence += currentWord.GetComponent<WordBubble>().GetSegment().text + " ";
-        }
-
+        ConnectionVisualizer.Instance.ClearConnections();
+        
         Destroy(selector);
 
         foreach (GameObject word in selectedBubbles)
         {
-            word.GetComponent<WordBubble>().canMove = true;
+            if(word != null)
+            {
+                word.GetComponent<WordBubble>().canMove = true;
+            }
         }
-        ConnectionVisualizer.Instance.ClearConnections();
 
         MakeListEmpty();
     }

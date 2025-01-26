@@ -42,10 +42,20 @@ public class BubbleSpawner : MonoBehaviour
 
     public void LevelClear()
     {
-        while(bubbleContainer.transform.childCount > 0)
+        /*while(bubbleContainer.transform.childCount > 0)
         {
-            Destroy(bubbleContainer.transform.GetChild(0).gameObject);   
+            Destroy(bubbleContainer.transform.GetChild(0).gameObject);
+        }*/
+
+        foreach (Transform bubble in bubbleContainer.transform)
+        {
+            Destroy(bubble.gameObject);
         }
-        PhraseManager.Instance.SpawnNewSetOfPhrases();
+
+        PhraseManager manager = PhraseManager.Instance;
+
+        manager.LevelIndex++;
+        manager.ClearPhrase();
+        manager.SpawnNewSetOfPhrases();
     }
 }
