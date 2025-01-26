@@ -27,7 +27,7 @@ public class SpriteSwapper : MonoBehaviour
 
     private void Update()
     {
-        if (currentSpriteIndex >= 21)
+        if (currentSpriteIndex >= 21) //TODO
         {
             StopSwapping();
         }
