@@ -45,19 +45,9 @@ public class Bubble : MonoBehaviour
         Vector2 maxArea = currLoc + areaAddetive;
         Vector2 minArea = currLoc - areaAddetive;
 
-        return CheckAllowed(new Vector3(Random.Range(maxArea.x, minArea.x), Random.Range(maxArea.y, minArea.y), 0));
+        return new Vector3(Random.Range(maxArea.x, minArea.x), Random.Range(maxArea.y, minArea.y), 0);
     }
 
-    Vector3 CheckAllowed(Vector3 pos)
-    {
-        float X = 5.2f;
-        float Y = 2.5f;
-
-        pos.x = Mathf.Clamp(pos.x, -X, X);
-        pos.y = Mathf.Clamp(pos.y, -Y, Y);
-
-        return pos;
-    }
     public void RotateBubble()
     {
         transform.Rotate(new Vector3(0, 0, rotationSpeed));
