@@ -10,6 +10,8 @@ public class BubbleSpawner : MonoBehaviour
     [SerializeField] private List<GameObject> bubblePrefabs = new List<GameObject>();
     [SerializeField] private List<GameObject> obstaclePrefabs = new List<GameObject>();
 
+    [SerializeField] private GameObject playerObj;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -20,6 +22,11 @@ public class BubbleSpawner : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    public void SpawnPlayer()
+    {
+        Instantiate(playerObj);
     }
 
     public void SpawnBubble(Segment segment)
