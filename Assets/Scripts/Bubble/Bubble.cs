@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Bubble : MonoBehaviour
 {
+    [SerializeField] private GameObject VfxObj;
+
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float moveSpeed;
 
@@ -71,5 +73,10 @@ public class Bubble : MonoBehaviour
         {
             targetPos = GetRandomPos(transform.position);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(VfxObj).gameObject.transform.position = transform.position;
     }
 }

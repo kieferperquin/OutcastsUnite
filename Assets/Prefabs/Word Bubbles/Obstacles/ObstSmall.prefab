@@ -345,11 +345,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd368a06c1e84640b6530f455a816ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VfxObj: {fileID: 8632318632260013381, guid: 526050dc275eee846b211fcac2676cfd, type: 3}
   rotationSpeed: 0
   moveSpeed: 0.25
   areaSize: 1
-  bubbleWord: {fileID: 6842032118259367750}
   canMove: 1
+  bubbleWord: {fileID: 6842032118259367750}
 --- !u!135 &7008816339049731554
 SphereCollider:
   m_ObjectHideFlags: 0
