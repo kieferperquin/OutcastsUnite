@@ -32,9 +32,12 @@ public class ConnectionVisualizer : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < points.Count; i++)
+        if(points.Count > 0)
         {
-            lr.SetPosition(i, points[i].position);
+            for (int i = 0; i < points.Count; i++)
+            {
+                lr.SetPosition(i, points[i].position);
+            }
         }
     }
 
